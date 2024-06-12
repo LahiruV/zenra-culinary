@@ -3,6 +3,7 @@ import { CssBaseline, Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import LeftSection from '../../Components/Login/LeftSection';
 import RightSection from '../../Components/Login/RightSection';
 
@@ -16,6 +17,7 @@ export default function Login() {
     ];
     const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -32,15 +34,18 @@ export default function Login() {
         const password = data.get('password');
         let errors = {};
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            errors.email = 'Invalid email address';
-            setErrors(errors);
+        if (!email || !password) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'All fields are required!',
+            });
             return;
         }
 
-        if (password.length < 8) {
-            errors.password = 'Password must be at least 8 characters long';
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errors.email = 'Invalid email address';
             setErrors(errors);
             return;
         }
@@ -59,8 +64,9 @@ export default function Login() {
                     icon: 'success',
                     confirmButtonText: "OK",
                     type: "success"
+                }).then(() => {
+                    navigate('/');
                 });
-                window.location.href = "/";
             } else {
                 await Swal.fire({
                     title: "Error!",
@@ -69,7 +75,6 @@ export default function Login() {
                     confirmButtonText: "OK",
                     type: "error"
                 });
-                window.location.href = "/";
             }
         } catch (error) {
             console.error(error);
@@ -79,8 +84,7 @@ export default function Login() {
                 icon: 'error',
                 confirmButtonText: "OK",
                 type: "error"
-            });
-            window.location.href = "/";
+            })
         }
     };
 
