@@ -50,6 +50,12 @@ export default function Login() {
             return;
         }
 
+        if (password.length < 8) {
+            errors.password = 'Password must be at least 8 characters long';
+            setErrors(errors);
+            return;
+        }
+
         let user = { email, password };
 
         try {

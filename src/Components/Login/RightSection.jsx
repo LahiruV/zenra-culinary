@@ -8,7 +8,7 @@ export default function RightSection({ handleSubmit, errors }) {
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
             <Box
                 sx={{
-                    my: { xs: 8, md: 20 },
+                    my: { xs: 8, md: 14 },
                     mx: { xs: 4, md: 8 },
                     display: 'flex',
                     flexDirection: 'column',

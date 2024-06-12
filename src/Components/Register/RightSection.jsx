@@ -28,8 +28,7 @@ export default function RightSection({ handleSubmit, errors }) {
                         id="name"
                         label="Name"
                         name="name"
-                        autoComplete="name"
-                        autoFocus
+                        autoComplete="name"                        
                         required
                         error={!!errors.name}
                         helperText={errors.name}
