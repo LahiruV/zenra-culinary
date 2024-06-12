@@ -6,7 +6,7 @@ const Copyright = () => {
     <Typography variant="body2" color="text.secondary" mt={5}>
       {'Copyright © '}
       <Link color="inherit" href="https://ai.google.dev/gemini-api">
-      Zenralavi
+      Zenra-Culinary
       </Link>{' '}
       Powered By Gemini API
       {' '}
