@@ -19,7 +19,7 @@ export default function LeftSection({ quotes, currentQuoteIndex, setCurrentQuote
             md={7}
             sx={{
                 position: 'relative',
-                backgroundImage: 'url(https://images.pexels.com/photos/1028427/pexels-photo-1028427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+                backgroundImage: 'url(https://images.pexels.com/photos/4224305/pexels-photo-4224305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
                 backgroundRepeat: 'no-repeat',
                 backgroundColor: (t) =>
                     t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

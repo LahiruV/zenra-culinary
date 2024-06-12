@@ -5,9 +5,11 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" mt={5}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-      Lahiru
+      <Link color="inherit" href="https://ai.google.dev/gemini-api">
+      Zenralavi
       </Link>{' '}
+      Powered By Gemini API
+      {' '}
       {new Date().getFullYear()}
     </Typography>
   );
