@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, Button, TextField, Paper, Box, Grid, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from 'react-router-dom';
