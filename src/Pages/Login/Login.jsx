@@ -65,7 +65,7 @@ export default function Login() {
                     confirmButtonText: "OK",
                     type: "success"
                 }).then(() => {
-                    navigate('/');
+                    navigate('/home');
                 });
             } else {
                 await Swal.fire({
