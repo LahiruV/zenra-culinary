@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CssBaseline, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -98,8 +98,7 @@ export default function Register() {
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
-                <CssBaseline />
+            <Grid container component="main" sx={{ height: '100vh' }}>                
                 <LeftSection quotes={quotes} currentQuoteIndex={currentQuoteIndex} />
                 <RightSection handleSubmit={handleSubmit} errors={errors} />
             </Grid>

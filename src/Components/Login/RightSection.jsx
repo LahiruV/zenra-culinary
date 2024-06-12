@@ -1,6 +1,7 @@
 import React from 'react';
-import { Avatar, Button, TextField, Link, Paper, Box, Grid, Typography } from '@mui/material';
+import { Avatar, Button, TextField, Paper, Box, Grid, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Link } from 'react-router-dom';
 
 export default function RightSection({ handleSubmit, errors }) {
     return (
@@ -18,7 +19,7 @@ export default function RightSection({ handleSubmit, errors }) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h4">
-                    <b>Log In</b>
+                    <b>Login</b>
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
                     <TextField
@@ -57,8 +58,8 @@ export default function RightSection({ handleSubmit, errors }) {
                     <Grid container>
                         <Grid item>
                             Don't have an account? {" "}
-                            <Link href="Register" variant="body2">
-                                {"Sign Up"}
+                            <Link to="Register" variant="body2">
+                                {"Register"}
                             </Link>
                         </Grid>
                     </Grid>
