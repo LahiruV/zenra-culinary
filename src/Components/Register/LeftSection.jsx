@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Box, Typography } from '@mui/material';
+import Copyright from '../Copyright/Copyright';
 
-export default function LeftSection({ quotes, currentQuoteIndex }) {
+export default function LeftSection({ quotes, currentQuoteIndex, setCurrentQuoteIndex }) {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
         }, 5000);
 
         return () => clearInterval(intervalId);
-    }, [quotes]);
+    }, [quotes, setCurrentQuoteIndex]);
 
     return (
         <Grid
@@ -17,6 +18,7 @@ export default function LeftSection({ quotes, currentQuoteIndex }) {
             sm={4}
             md={7}
             sx={{
+                position: 'relative',
                 backgroundImage: 'url(https://images.pexels.com/photos/4224305/pexels-photo-4224305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
                 backgroundRepeat: 'no-repeat',
                 backgroundColor: (t) =>
@@ -50,7 +52,7 @@ export default function LeftSection({ quotes, currentQuoteIndex }) {
                         opacity: 1,
                     }}
                 >
-                    Build Your Own,
+                    Cook Your,
                 </Typography>
                 <Typography
                     component="h1"
@@ -84,6 +86,17 @@ export default function LeftSection({ quotes, currentQuoteIndex }) {
                 >
                     {quotes[currentQuoteIndex]}
                 </Typography>
+            </Box>
+            <Box
+                sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    width: '100%',
+                    textAlign: 'center',
+                    padding: '1rem',
+                }}
+            >
+                <Copyright />
             </Box>
         </Grid>
     );
