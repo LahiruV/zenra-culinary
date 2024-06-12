@@ -84,9 +84,6 @@ export default function Register() {
                     confirmButtonText: 'OK',
                     type: 'error',
                 });
-                setTimeout(() => {
-                    navigate('/register');
-                }, 3000);
             }
         } catch (err) {
             Swal.fire({
@@ -96,9 +93,6 @@ export default function Register() {
                 confirmButtonText: 'OK',
                 type: 'error',
             });
-            setTimeout(() => {
-                navigate('/register');
-            }, 3000);
         }
     };
 
