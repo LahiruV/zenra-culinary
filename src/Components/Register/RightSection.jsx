@@ -2,9 +2,12 @@ import React from 'react';
 import { Avatar, Button, TextField, Paper, Box, Grid, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function RightSection({ handleSubmit, errors }) {
+    const defaultTheme = createTheme();
     return (
+        <ThemeProvider theme={defaultTheme}>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
             <Box
                 sx={{
@@ -87,5 +90,7 @@ export default function RightSection({ handleSubmit, errors }) {
                 </Box>
             </Box>
         </Grid>
+        </ThemeProvider>
+
     );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Grid, Box, Typography } from '@mui/material';
 import Copyright from '../Copyright/Copyright';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function LeftSection({ quotes, currentQuoteIndex, setCurrentQuoteIndex }) {
     useEffect(() => {
@@ -10,8 +11,10 @@ export default function LeftSection({ quotes, currentQuoteIndex, setCurrentQuote
 
         return () => clearInterval(intervalId);
     }, [quotes, setCurrentQuoteIndex]);
+    const defaultTheme = createTheme();
 
     return (
+        <ThemeProvider theme={defaultTheme}>
         <Grid
             item
             xs={false}
@@ -99,5 +102,6 @@ export default function LeftSection({ quotes, currentQuoteIndex, setCurrentQuote
               <Copyright/>
             </Box>
         </Grid>
+        </ThemeProvider>
     );
 }
