@@ -33,12 +33,12 @@ export default function Register() {
         const name = data.get('name');
         const email = data.get('email');
         const phone = data.get('phone');
+        const country = data.get('country');
+        const city = data.get('city');
         const password = data.get('password');
-        const isLoyal = false;
-        const points = 0;
         let errors = {};
-
-        if (!name || !email || !password || !phone) {
+console.log(name, email, phone, country, city, password);
+        if (!name || !email || !password || !phone || !country || !city) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
