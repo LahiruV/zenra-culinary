@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Avatar, Button, TextField, Paper, Box, Grid, Typography, Autocomplete } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from 'axios';
+
+
 
 export default function RightSection({ handleSubmit, errors }) {
     const defaultTheme = createTheme();
-=======
-import axios from 'axios';
-
-export default function RightSection({ handleSubmit, errors }) {
     const [selectedOption, setSelectedOption] = useState('');
     const [countries, setCountries] = useState([]);
 
@@ -30,8 +28,6 @@ export default function RightSection({ handleSubmit, errors }) {
     useEffect(() => {
         loadCountries();
     }, []);
-
->>>>>>> c8a1233ed989d1cc2c36adc16af737b6a0002614
     return (
         <ThemeProvider theme={defaultTheme}>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
