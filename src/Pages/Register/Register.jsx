@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
@@ -61,7 +61,7 @@ console.log(name, email, phone, country, city, password);
         }
 
         try {
-            const user = { email, password, name, phone, isLoyal, points };
+            const user = { email, password, name, phone, country, city};
             const response = await axios.post('/user/register', user);
 
             if (response.data.message !== 'Email is Already Used') {
