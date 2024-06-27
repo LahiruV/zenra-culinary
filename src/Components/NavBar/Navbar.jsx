@@ -14,6 +14,12 @@ const Navbar = () => {
     textDecoration: 'none',
   };
 
+  const activeStyle = {
+    color: 'orange',
+  };
+
+  const getLinkStyle = ({ isActive }) => (isActive ? { ...linkStyle, ...activeStyle } : linkStyle);
+
   return (
     <AppBar position="fixed">
       <Toolbar style={{ justifyContent: 'space-between', backgroundColor:'#282828' }}>
@@ -27,7 +33,7 @@ const Navbar = () => {
           <MenuItem component={NavLink} to="/about" style={linkStyle}>
             About
           </MenuItem> */}
-          <MenuItem component={NavLink} to="/cookHelper" style={linkStyle}>
+          <MenuItem component={NavLink} to="/cookHelper" style={getLinkStyle}>
             Cook Helper
           </MenuItem>
           <Button variant="contained" color="warning" onClick={handleLogout}>
