@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LeftSection from '../../Components/Register/LeftSection';
 import RightSection from '../../Components/Register/RightSection';
+import { API_URL } from '../../APIUrl';
 
 const defaultTheme = createTheme();
 
@@ -37,7 +38,7 @@ export default function Register() {
         const city = data.get('city');
         const password = data.get('password');
         let errors = {};
-console.log(name, email, phone, country, city, password);
+
         if (!name || !email || !password || !phone || !country || !city) {
             Swal.fire({
                 icon: 'error',
@@ -62,7 +63,7 @@ console.log(name, email, phone, country, city, password);
 
         try {
             const user = { email, password, name, phone, country, city};
-            const response = await axios.post('/user/register', user);
+            const response = await axios.post(`${API_URL}/auth/register`, user);
 
             if (response.data.message !== 'Email is Already Used') {
                 Swal.fire({
